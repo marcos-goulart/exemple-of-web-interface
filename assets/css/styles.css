@@ -1,0 +1,134 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 1050;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+main {
+    margin-left: 250px;
+    transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar.collapsed + main {
+    margin-left: 0;
+}
+
+/* ===== Cards ===== */
+.stat-card, .panel {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+}
+
+.chart-container {
+    position: relative;
+    height: 250px;
+}
+
+/* ===== Dark Mode Base ===== */
+.dark-mode {
+    background-color: #0f172a !important;
+    color: #e2e8f0 !important;
+}
+
+.dark-mode .sidebar {
+    background-color: #0b1220 !important;
+}
+
+.dark-mode .card,
+.dark-mode .panel,
+.dark-mode .stat-card {
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+}
+
+/* ===== Balanced Dark Table ===== */
+.dark-mode .table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: #1e293b;
+    --bs-table-hover-bg: #273449;
+    color: #e2e8f0 !important;
+    border-color: #334155 !important;
+}
+
+.dark-mode .table thead {
+    background-color: #273449 !important;
+    color: #cbd5e1 !important;
+}
+
+.dark-mode .table tbody tr {
+    background-color: transparent !important;
+}
+
+.dark-mode .table tbody tr:hover {
+    background-color: #273449 !important;
+}
+
+.dark-mode .table td,
+.dark-mode .table th {
+    border-color: #334155 !important;
+}
+
+.dark-mode .text-muted {
+    color: #94a3b8 !important;
+}
+
+.dark-mode .btn-outline-dark {
+    border-color: #e2e8f0;
+    color: #e2e8f0;
+}
+
+.dark-mode .btn-outline-dark:hover {
+    background-color: #334155;
+}
+
+.dark-mode .btn-dark {
+    background-color: #334155;
+    border-color: #334155;
+}
+
+/* ===== Fix Employees at High Risk text in Dark Mode ===== */
+.dark-mode .panel {
+    color: #ffffff !important;
+}
+
+.dark-mode .table thead th {
+    color: #ffffff !important;
+}
+
+/* ===== Force all table text to white in dark mode ===== */
+.dark-mode .table tbody td {
+    color: #e2e8f0; !important;
+}
+
+.dark-mode .table tbody th {
+    color: #e2e8f0;
+}
+
+.dark-mode #employeeSearch {
+    background-color: #e2e8f0;
+    border: 1px solid #334155;
+    color: #ffffff;
+}
